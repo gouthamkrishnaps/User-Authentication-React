@@ -15,7 +15,7 @@ function Users() {
   return (
     <div>
       {users.length>0?
-      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-3'>
+      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 p-3'>
       {users.map((user)=>(
         <div className='border-2 border-gray-500 p-5 rounded-3xl shadow-2xl w-11/12'>
         <div className='flex items-center w-full'>
