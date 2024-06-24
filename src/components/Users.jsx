@@ -8,6 +8,12 @@ function Users() {
   }
   console.log(users);
 
+  const removeUser = (email) => {
+    const updatedUsers = users.filter(user => user.email !== email);
+    localStorage.setItem('Users', JSON.stringify(updatedUsers));
+    setUsers(updatedUsers);
+  };
+
   useEffect(()=>{
       getUsers()
   },[])
@@ -29,6 +35,8 @@ function Users() {
           <h5>Email address : <span className='font-semibold'>{user.email}</span></h5>:
           <h5>Email address : <span className='font-bold text-red-700'>{user.email}</span></h5>
         }
+        {user.email !=="admin@gmail.com" && 
+        <button className='mt-5 px-3 py-1.5 bg-red-600 text-white rounded-lg shadow-lg font-semibold' onClick={()=>{removeUser(user.email)}}>Remove user</button>}
       </div>
       ))
       }

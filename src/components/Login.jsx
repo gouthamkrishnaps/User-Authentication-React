@@ -31,7 +31,9 @@ function Login() {
           text: 'You have successfully logged in',
           icon: 'success',
         });
-        navigate('/dashboard'); // Replace with the appropriate route for your dashboard or home page
+        setTimeout(()=>{
+          navigate('/dashboard')
+      },2000)// Replace with the appropriate route for your dashboard or home page
       } else {
         swal({
           title: 'Login Failed',
